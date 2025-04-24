@@ -25,7 +25,7 @@ advertised.listeners=PLAINTEXT://172.17.0.1:9092
 
 ## 🚀 Usage
 
-# 🧾 Producer
+### 🧾 Producer
 
 Sends key-value messages (e.g. 2001: movie1) to the Kafka topic.
 
@@ -39,7 +39,7 @@ Example output:
 ✅ Connected to Kafka at 172.17.0.1:9092
 📤 Sent message: Key=2001, Value=movie1
 
-# 📦 Consumer
+### 📦 Consumer
 
 Listens to messages on the hit-movies-v2 topic and prints them.
 
