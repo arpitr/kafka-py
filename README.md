@@ -16,16 +16,16 @@ Install dependencies:
 pip install confluent-kafka
 ```
 
-⚙️ Kafka Configuration
+## ⚙️ Kafka Configuration
 
 Ensure your Kafka broker is correctly configured with:
 
 listeners=PLAINTEXT://0.0.0.0:9092
 advertised.listeners=PLAINTEXT://172.17.0.1:9092
 
-🚀 Usage
+## 🚀 Usage
 
-🧾 Producer
+# 🧾 Producer
 
 Sends key-value messages (e.g. 2001: movie1) to the Kafka topic.
 
@@ -39,7 +39,7 @@ Example output:
 ✅ Connected to Kafka at 172.17.0.1:9092
 📤 Sent message: Key=2001, Value=movie1
 
-📦 Consumer
+# 📦 Consumer
 
 Listens to messages on the hit-movies-v2 topic and prints them.
 
@@ -47,12 +47,12 @@ Listens to messages on the hit-movies-v2 topic and prints them.
 python consumer.py
 ```
 
-Example output:
+# Example output:
 
 ✅ Subscribed to topic: hit-movies-v2
 📦 Received message | Key: 2001 | Value: movie1
 
-🧪 Testing
+## 🧪 Testing
 
 To verify everything is working:
 
