@@ -2,7 +2,7 @@ from confluent_kafka import Producer, KafkaException, KafkaError, admin
 import sys
 import time
 
-KAFKA_BROKER = '172.17.0.1:9092'
+KAFKA_BROKER = 'localhost:9092'
 TOPIC_NAME = 'hit-movies-v2'
 
 def delivery_report(err, msg):

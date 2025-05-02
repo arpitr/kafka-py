@@ -7,7 +7,7 @@ This project contains a Python-based Kafka **Producer** and **Consumer** that co
 ## 🛠️ Requirements
 
 - Python 3.7+
-- Kafka running on `172.17.0.1:9092`
+- Kafka running on `localhost:9092`
 - [Confluent Kafka Python client](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html)
 
 Install dependencies:
@@ -21,7 +21,7 @@ pip install confluent-kafka
 Ensure your Kafka broker is correctly configured with:
 
 listeners=PLAINTEXT://0.0.0.0:9092
-advertised.listeners=PLAINTEXT://172.17.0.1:9092
+advertised.listeners=PLAINTEXT://localhost:9092
 
 ## 🚀 Usage
 
@@ -36,7 +36,7 @@ python producer.py
 Example output:
 
 ✅ Topic "hit-movies-v2" exists.
-✅ Connected to Kafka at 172.17.0.1:9092
+✅ Connected to Kafka at localhost:9092
 📤 Sent message: Key=2001, Value=movie1
 
 ### 📦 Consumer

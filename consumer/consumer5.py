@@ -2,7 +2,7 @@ from confluent_kafka import Consumer, KafkaError, KafkaException
 import sys
 import signal
 
-KAFKA_BROKER = '172.17.0.1:9092'
+KAFKA_BROKER = 'localhost:9092'
 TOPIC_NAME = 'hit-movies-v2'
 GROUP_ID = 'movie-consumer-group-2'
 
