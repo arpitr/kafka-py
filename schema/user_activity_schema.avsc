@@ -1,0 +1,24 @@
+{
+    "type": "record",
+    "name": "user_activity",
+    "namespace": "com.example.user_activity",
+    "doc": "Schema for User Activity",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int",
+            "doc": "User ID"
+        },
+        {
+            "name": "action",
+            "type": "string",
+            "default": null,
+            "doc": "Action performed by the user."
+        },
+        {
+            "name": "timestamp",
+            "type": "long",
+            "doc": "Time of action by user."
+        }
+    ]
+}
