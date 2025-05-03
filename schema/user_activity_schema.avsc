@@ -12,7 +12,7 @@
         {
             "name": "action",
             "type": "string",
-            "default": null,
+            "default": "",
             "doc": "Action performed by the user."
         },
         {
