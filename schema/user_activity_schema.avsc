@@ -26,7 +26,7 @@
             "default": "",
             "doc": "Country of user."
         },
-                {
+        {
             "name": "IP",
             "type": "string",
             "doc": "IP of user."
