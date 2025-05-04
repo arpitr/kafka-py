@@ -10,6 +10,7 @@ KAFKA_BROKER = 'localhost:9092'
 TOPIC_NAME = 'user-activity'
 GROUP_ID = 'user-activity-group01'
 SCHEMA_REGISTRY_URL = 'http://localhost:8081'
+SCHEMA_ID=4
 
 running = True
 
@@ -26,11 +27,27 @@ def main():
     schema_registry_conf = {'url': SCHEMA_REGISTRY_URL}
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
 
-    # Avro deserializer (value)
+    # ✅ Fetch schema string using schema ID
+    try:
+        schema_response = schema_registry_client.get_schema(schema_id=SCHEMA_ID)
+        schema_str = schema_response.schema_str
+        print(f"{schema_str}")
+        
+    except Exception as e:
+        print(f"❌ Failed to fetch schema with ID {SCHEMA_ID}: {e}")
+        sys.exit(1)
+
+    # ✅ Initialize Avro deserializer with specific schema
     avro_deserializer = AvroDeserializer(
         schema_registry_client=schema_registry_client,
-        schema_str=None  # None allows fetching schema by topic automatically
+        schema_str=schema_str
     )
+
+    # Always get the latest schema from the schema registry.
+    # avro_deserializer = AvroDeserializer(
+    #     schema_registry_client=schema_registry_client,
+    #     schema_str=None  # None allows fetching schema by topic automatically
+    # )
 
     # Kafka consumer config
     consumer_conf = {
