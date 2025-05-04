@@ -19,6 +19,17 @@
             "name": "timestamp",
             "type": "long",
             "doc": "Time of action by user."
+        },
+        {
+            "name": "country",
+            "type": "string",
+            "default": "",
+            "doc": "Country of user."
+        },
+                {
+            "name": "IP",
+            "type": "string",
+            "doc": "IP of user."
         }
     ]
 }
