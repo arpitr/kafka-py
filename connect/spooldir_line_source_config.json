@@ -1,0 +1,24 @@
+{
+    "name": "spooldir-nginx-source",
+    "config": {
+      "connector.class": "com.github.jcustenborder.kafka.connect.spooldir.SpoolDirLineDelimitedSourceConnector",
+      "tasks.max": "1",
+      "topic": "webserver.logs",
+      
+      "input.path": "/opt/kafka-connect/spooldir/input",
+      "finished.path": "/opt/kafka-connect/spooldir/finished",
+      "error.path": "/opt/kafka-connect/spooldir/error",
+      "input.file.pattern": ".*\\.log",
+      "recursive": "false",
+      "input.charset": "UTF-8",
+      "poll.interval.ms": "10000",
+  
+      "schema.generation.enabled": "true",
+      "timestamp.field": "timestamp",
+      "timestamp.date.format": "dd/MMM/yyyy:HH:mm:ss Z",
+  
+      "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter"
+    }
+  }
+  
