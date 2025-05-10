@@ -11,11 +11,9 @@ Kafka Connect allows to connect
 - [JDBC Connector (Source and Sink)](https://www.confluent.io/hub/confluentinc/kafka-connect-jdbc) : Allows to kafka topic and 
 
 
-```mermaid
 flowchart TD
     A[logfile.log in Filesystem] -->|Kafka Connect Spooldir| B[Kafka Topic: webserver.logs]
     B -->|JDBC Connector| C[Postgres Server (localhost:5432)]
-```
 
 
 ## Prerequisites
