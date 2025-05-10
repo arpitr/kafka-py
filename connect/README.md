@@ -10,10 +10,11 @@ Kafka Connect allows to connect
 - [Kafka Connect Spooldir](https://www.confluent.io/hub/confluentinc/kafka-connect-spooldir): Allows to read file from file system and push to kafka topic
 - [JDBC Connector (Source and Sink)](https://www.confluent.io/hub/confluentinc/kafka-connect-jdbc) : Allows to kafka topic and 
 
-
-flowchart TD
+```mermaid
+flowchart LR
     A[logfile.log in Filesystem] -->|Kafka Connect Spooldir| B[Kafka Topic: webserver.logs]
-    B -->|JDBC Connector| C[Postgres Server (localhost:5432)]
+    B -->|JDBC Connector| C[(Postgres Server)]
+```
 
 
 ## Prerequisites
