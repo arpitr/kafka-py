@@ -1,0 +1,23 @@
+{
+  "name": "kafka-to-postgres-sink",
+  "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "topics": "webserver.logs",
+      "connection.url": "jdbc:postgresql://host.docker.internal:5432/postgres",
+      "connection.user": "postgres",
+      "connection.password": "postgres",
+      "insert.mode": "insert",
+      "pk.mode": "none",
+      "auto.create": "false",
+      "auto.evolve": "false",
+      "table.name.format": "webserver_logs",
+      "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "transforms": "wrap,FilterStatus",
+      "transforms.wrap.type": "org.apache.kafka.connect.transforms.HoistField$Value",
+      "transforms.wrap.field": "raw_log",
+      "transforms.FilterStatus.type": "com.example.kafka.connect.transforms.RegexFilter",
+      "transforms.FilterStatus.regex": ".*\\s(400|500)\\s.*"
+  }
+}
