@@ -1,0 +1,14 @@
+{
+  "name": "datagen-sensor",
+  "config": {
+    "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+    "kafka.topic": "sensor-data",
+    "schema.filename": "/opt/kafka-connect/datagen/input/sensor-schema.json",
+    "schema.keyfield": "vehicle_id",
+    "max.interval": 10000,
+    "iterations": 1000000,
+    "tasks.max": "1",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8081"
+  }
+}

@@ -52,6 +52,7 @@ services:
       - "8083:8083"
     volumes:
       - ./connectors:/usr/share/confluent-hub-components
+      - ./datagen/input:/opt/kafka-connect/datagen/input
       - ./spooldir/input:/opt/kafka-connect/spooldir/input
       - ./spooldir/finished:/opt/kafka-connect/spooldir/finished
       - ./spooldir/error:/opt/kafka-connect/spooldir/error
